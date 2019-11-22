@@ -1,7 +1,5 @@
 package com.example.observerpattern;
 
-import android.os.Handler;
-
 import com.example.observerpattern.interfaces.RepositoryObserver;
 import com.example.observerpattern.interfaces.Subject;
 
@@ -16,13 +14,13 @@ public class UserDataRepository implements Subject {
 
     private ArrayList<RepositoryObserver> mObservers;
 
-    private UserDataRepository() {
+    UserDataRepository() {
         mObservers = new ArrayList<>();
-        getNewDataFromRemote();
+       // getNewDataFromRemote();
     }
 
     // Simulate network
-    private void getNewDataFromRemote() {
+  /*  private void getNewDataFromRemote() {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -30,7 +28,7 @@ public class UserDataRepository implements Subject {
                 setUserData(mFullName, mAge);
             }
         }, 10000);
-    }
+    }*/
 
     // Creates a Singleton of the class
     public static UserDataRepository getInstance() {

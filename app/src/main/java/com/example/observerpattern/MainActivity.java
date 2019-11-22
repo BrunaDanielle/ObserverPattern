@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.observerpattern.interfaces.RepositoryObserver;
 import com.example.observerpattern.interfaces.Subject;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
         mTextViewUserAge = findViewById(R.id.tv_age);
         mTextViewUserFullName = findViewById(R.id.tv_fullname);
 
+
         btnUpdate = findViewById(R.id.btnAtualizar);
         etName = findViewById(R.id.et_fullName);
         etAge = findViewById(R.id.et_age);
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               mUserDataRepository.setUserData(etName.toString(), etAge.toString());
+               onUserDataChanged(etName.toString(), etAge.toString());
             }
         });
     }
