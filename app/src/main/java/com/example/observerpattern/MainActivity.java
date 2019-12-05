@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements RepositoryObserve
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               onUserDataChanged(etName.toString(), etAge.toString());
+               onUserDataChanged(etName.getText().toString(), etAge.getText().toString());
             }
         });
     }
